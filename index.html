@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISCO 2026</title>
+  <link rel="stylesheet" href="Banner.css">
+  <link rel="stylesheet" href="Gambar.css">
+
+  <link rel="icon" type="image/png" href="">
+
+  
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      ISCO 2026
+    </div>
+
+    <nav>
+      <a href="#isco">ISCO</a>
+      <a href="#competitions">Competitions</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#album">Album</a>
+      <a href="#media">Media Sosial</a>
+      <a href="#pendaftaran" class="btn">Pendaftaran</a>
+    </nav>
+  </header>
+
+  <!-- HERO / HEADER -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1></h1>
+      <p></p>
+    </div>
+  </section>
+
+  <!-- SECTION -->
+  <section id="isco" class="content">
+    <h2>Tentang ISCO</h2>
+    <p>
+      ISCO adalah ajang kompetisi Islami tingkat nasional yang diselenggarakan oleh SMAN 2 Jombang.
+    </p>
+
+    <h2>Apa yang ada di ISCO?</h2>
+
+    <div class="section card section-cards">
+    <img
+      src="Assets/Mimbar.png"
+      class="animated-img"
+      id="imgAnim"
+      alt="gambar animasi"
+    >
+
+    <script>
+    const img = document.getElementById("imgAnim");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          img.classList.add("show");
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(img);
+  </script>
+
+    <h3>Dai</h3>
+    <a href="#" class="btn orange">Pendaftaran</a>
+    <a href="#" class="btn orange">Guide Book</a>
+    </div>
+
+  </section>
+
+  <section id="competitions" class="content">
+    <h2>Competitions</h2>
+    <p>Daftar lomba akan ditampilkan di sini.</p>
+  </section>
+
+  <section id="timeline" class="content">
+    <h2>Timeline</h2>
+    <p>Timeline kegiatan ISCO 2026.</p>
+  </section>
+
+  <section id="album" class="content">
+    <h2>Album</h2>
+    <p>Dokumentasi kegiatan.</p>
+  </section>
+
+  <section id="media" class="content">
+    <h2>Media Sosial</h2>
+    <p>Instagram, WhatsApp, dan lainnya.</p>
+  </section>
+
+  <section id="pendaftaran" class="content">
+    <h2>Pendaftaran</h2>
+    <p>Link pendaftaran peserta.</p>
+  </section>
+
+</body>
+</html>

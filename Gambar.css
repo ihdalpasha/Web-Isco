@@ -1,0 +1,96 @@
+    body {
+      margin: 0;
+      background: transparent;
+    }
+
+    /* Area supaya pas di layar */
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .section-cards {
+      display: flex;
+      justify-content: center; /* center kolom secara horizontal */
+      gap: 40px;               /* jarak antar kolom */
+      flex-wrap: wrap;          /* kalau layar kecil → stack */
+      margin: 50px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;     /* gambar + teks + tombol center */
+      text-align: center;
+    }
+
+    .card img {
+      width: 120px;            /* ukuran gambar */
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .card .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px 0;
+      border-radius: 20px;
+      font-weight: 600;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    /* warna tombol berbeda */
+    .card .btn.orange {
+      background: orange;
+    }
+
+    .card .btn.maroon {
+      background: maroon;
+    }
+
+    .card .btn:hover {
+      opacity: 0.8;
+    }
+
+/* responsive: HP stack vertikal */
+@media screen and (max-width: 768px) {
+  .section-cards {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .card img {
+    width: 100px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+}
+
+    /* Gambar awal (belum muncul) */
+    .animated-img {
+      width: 90%;
+      max-width: 600px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    /* Saat sudah muncul */
+    .animated-img.show {
+      opacity: 1;
+      transform: translateY(0);
+    }

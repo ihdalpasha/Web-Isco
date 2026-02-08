@@ -1,0 +1,171 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 40px;
+  background: rgba(40, 40, 40, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ffd27d;
+}
+
+.navbar .btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #ffd27d;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Default: Desktop navbar horizontal */
+.navbar nav {
+  display: flex;
+}
+
+/* Mobile: layar ≤ 768px */
+@media screen and (max-width: 768px) {
+  .navbar nav {
+    display: none; /* disembunyikan default */
+    flex-direction: column; /* kalau muncul, vertikal */
+    background: rgba(40, 40, 40, 0.95);
+    position: absolute;
+    top: 60px; /* di bawah navbar */
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+
+  .navbar nav.show {
+    display: flex; /* muncul kalau tombol hamburger diklik */
+  }
+
+  .navbar .btn-hamburger {
+    display: block; /* tombol hamburger muncul */
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+  }
+}
+
+/* Desktop: sembunyikan tombol hamburger */
+.btn-hamburger {
+  display: none;
+}
+
+/* HERO */
+/* DEFAULT → LAPTOP */
+.hero {
+  height: 90vh;
+  background-image: url("Assets/Banner.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+/* HP */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    background-position: center top;
+  }
+}
+
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #7a1f1f;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Mobile: layar ≤ 768px */
+@media screen and (max-width: 768px) {
+  .content {
+    margin: 50px 15px;    /* jarak atas/bawah & kiri/kanan lebih pas HP */
+  }
+
+  .content h2 {
+    font-size: 24px;      /* judul lebih kecil */
+    margin-bottom: 10px;
+  }
+
+  .content p {
+    font-size: 14px;      /* paragraf lebih nyaman dibaca */
+    line-height: 1.5;
+  }
+}
