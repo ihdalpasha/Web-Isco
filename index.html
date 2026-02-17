@@ -6,28 +6,61 @@
   <title>ISCO 2026</title>
   <link rel="stylesheet" href="Banner.css">
   <link rel="stylesheet" href="Gambar.css">
-
   <link rel="icon" type="image/png" href="">
+  <link rel="stylesheet" href="">
 
   
 
 </head>
-<body>
 
+<body class="pm " >
   <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">
-      ISCO 2026
-    </div>
+  <header >
+    <nav id="navbar" class="navbar glass">
+        <div class="containerspasi">
+            <div class="flexcontainer">
+                <!-- Logo -->
+                <div class="flexh1logo">
+                    <div class="nav-logo"></div>
+                    <h1 class="h1flex">ISCO 2026</h1>
+                </div>
 
-    <nav>
-      <a href="#isco">ISCO</a>
-      <a href="#competitions">Competitions</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#album">Album</a>
-      <a href="#media">Media Sosial</a>
-      <a href="#pendaftaran" class="btn">Pendaftaran</a>
+                <!-- Desktop Menu -->
+                <div class="dekstop-menu">
+                    <a href="#about" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">ISCO</a>
+                    <a href="#competitions" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Competitions</a>
+                    <a href="#timeline" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Timeline</a>
+                    <a href="#gallery" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Album</a>
+                    <a href="#mediasosial" class="text-white font-poppins font-medium hover:text-turquoise transition-all duration-300 nav-link">Media Sosial</a>
+                    <a href="https://pendaftaran" target="_blank" class="btn">Pendaftaran</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="tampilanbutton buttonmobile">
+                    <div id="hamburger-line-1" class="hamburger-line12"></div>
+                    <div id="hamburger-line-2" class="hamburger-line12"></div>
+                    <div id="hamburger-line-3" class="hamburger-line3"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <div class="mobile-menu-content">
+                    <a href="#about" class="mobile-menu-item">About ISCO</a>
+                    <a href="#competitions" class="mobile-menu-item">Competitions</a>
+                    <a href="#timeline" class="mobile-menu-item">Timeline</a>
+                    <a href="#gallery" class="mobile-menu-item">Gallery</a>
+                    <a href="#contact" class="mobile-menu-item">Contact</a>
+                    <a href="https://pendaftaran.kofeinffunair.com" target="_blank" class="mobile-menu-item buttonmobile">
+                        Daftar
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
+  
   </header>
 
   <!-- HERO / HEADER -->
@@ -47,32 +80,44 @@
 
     <h2>Apa yang ada di ISCO?</h2>
 
-    <div class="section card section-cards">
-    <img
-      src="Assets/Mimbar.png"
-      class="animated-img"
-      id="imgAnim"
-      alt="gambar animasi"
-    >
-
-    <script>
-    const img = document.getElementById("imgAnim");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          img.classList.add("show");
-        }
-      });
-    }, { threshold: 0.5 });
-
-    observer.observe(img);
-  </script>
-
+<div class="section-cards">
+  <div class="card">
+    <img src="Assets/Mimbar.png" class="animated-img" alt="">
     <h3>Dai</h3>
+
     <a href="#" class="btn orange">Pendaftaran</a>
-    <a href="#" class="btn orange">Guide Book</a>
-    </div>
+    <a href="#" class="btn maroon">Guide Book</a>
+  </div>
+    <div class="card">
+    <img src="Assets/Belajar.png" class="animated-img" alt="">
+    <h3>CCI</h3>
+
+    <a href="#" class="btn orange">Pendaftaran</a>
+    <a href="#" class="btn maroon">Guide Book</a>
+  </div>
+  <div class="card">
+    <img src="Assets/Qur'an.png" class="animated-img" alt="">
+    <h3>Tahfidz</h3>
+
+    <a href="#" class="btn orange">Pendaftaran</a>
+    <a href="#" class="btn maroon">Guide Book</a>
+  </div>
+  <div class="card">
+    <img src="Assets/Baca.png" class="animated-img" alt="">
+    <h3>Tartil</h3>
+
+    <a href="#" class="btn orange">Pendaftaran</a>
+    <a href="#" class="btn maroon">Guide Book</a>
+  </div>
+  <div class="card">
+    <img src="Assets/Darbuka.png" class="animated-img" alt="">
+    <h3>Banjari</h3>
+
+    <a href="#" class="btn orange">Pendaftaran</a>
+    <a href="#" class="btn maroon">Guide Book</a>
+  </div>
+</div>
+
 
   </section>
 
@@ -100,6 +145,105 @@
     <h2>Pendaftaran</h2>
     <p>Link pendaftaran peserta.</p>
   </section>
+
+ <script>
+/* ================= MOBILE MENU ================= */
+const toggle = document.getElementById("mobile-menu-toggle");
+const overlay = document.getElementById("mobile-menu-overlay");
+const menu = document.getElementById("mobile-menu");
+const html = document.documentElement;
+
+let scrollY = 0;
+
+toggle.addEventListener("click", () => {
+
+  const isActive = menu.classList.contains("active");
+
+  if (!isActive) {
+    scrollY = window.scrollY;
+
+    html.style.scrollBehavior = "auto";
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
+
+  } else {
+
+    document.body.style.position = "";
+    document.body.style.top = "";
+
+    window.scrollTo(0, scrollY);
+    html.style.scrollBehavior = "smooth";
+  }
+
+  toggle.classList.toggle("active");
+  overlay.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+
+  document.body.style.position = "";
+  document.body.style.top = "";
+
+  window.scrollTo(0, scrollY);
+  html.style.scrollBehavior = "smooth";
+
+  toggle.classList.remove("active");
+  overlay.classList.remove("active");
+  menu.classList.remove("active");
+});
+
+
+/* ================= NAVBAR SCROLL EFFECT ================= */
+const hero = document.querySelector(".hero");
+const navbar = document.querySelector(".navbar");
+
+if(hero && navbar){
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        navbar.classList.remove("scrolled");
+      } else {
+        navbar.classList.add("scrolled");
+      }
+    },
+    {
+      rootMargin: "-100px 0px 0px 0px"
+    }
+
+    
+  );
+
+  heroObserver.observe(hero);
+}
+
+
+/* ================= CARD IMAGE ANIMATION (REUSABLE) ================= */
+
+const animatedImages = document.querySelectorAll(".animated-img");
+
+const imageObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.4,
+    rootMargin: "0px 0px -100px 0px"
+  }
+);
+
+animatedImages.forEach(img => {
+  imageObserver.observe(img);
+});
+
+</script>
 
 </body>
 </html>
