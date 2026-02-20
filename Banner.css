@@ -242,7 +242,7 @@ div {
     display: flex;
     align-self: center;
     justify-self: flex-end;
-    width: 65px;
+    width: 40px;
     height: 40px;
     background-image: url('Assets/Logo.png');
     background-size: cover;
@@ -559,37 +559,43 @@ button, input, optgroup, select, textarea {
 
 /* HERO */
 /* DEFAULT → LAPTOP */
-.hero{
-  position:relative;
-}
-.hero-img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit: contain;
-}
-.hero-content{
-  position:absolute;
-  inset:0;
-  z-index:2;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45); /* tingkat gelap */
-}
+.hero {
+  min-height: 100vh;
+  background-image: url("Assets/Banner.jpeg");
+  background-size: cover;
 
+  /* fokus default desktop */
+  background-position: center 35%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
 
 /* HP */
+@media (max-width: 768px) {
 
+  .hero {
 
+    /* tinggi bisa kamu kontrol — ini bikin “menciut elegan” */
+    min-height: clamp(420px, 65vh, 700px);
 
+    /* tetap cover biar penuh */
+    background-size: cover;
 
+    /* 🔥 INI KUNCI UTAMA NGATUR KOMPOSISI */
+    background-position: center 20%;
+  }
+
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
 
 .hero-content {
   position: relative;
@@ -616,9 +622,11 @@ button, input, optgroup, select, textarea {
 }
 
 .content h2 {
-  font-size: 32px;
+  font-family: 'Cinzel Decorative';
+  font-size: 28px;
   margin-bottom: 15px;
   color: #7a1f1f;
+  text-shadow: 3px -2px rgba(145, 134, 134, 0.411);
 }
 
 .content p {
@@ -657,4 +665,18 @@ button, input, optgroup, select, textarea {
 a, .btn {
   position: relative;
   z-index: 1;
+}
+
+section #isco p div{
+  display: flex;
+}
+section #isco p div span{
+  text-align: justify;
+  display: block;
+  white-space: nowrap;
+}
+
+.garisborder{
+  display: block;
+  border: 1px solid #7a1f1f 
 }
