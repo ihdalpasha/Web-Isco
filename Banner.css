@@ -607,11 +607,15 @@ button, input, optgroup, select, textarea {
   display: flex;
   justify-content: right;
   align-items: center;
-  cursor: pointer;
-
+  
+  z-index: 999;
 
 }
-
+.time-overlay,
+.time-overlaymobile{
+  position: absolute;
+  right: 0;
+}
 /* tulisan kecil */
 .time-label{
   font-size: 14px;
@@ -619,16 +623,37 @@ button, input, optgroup, select, textarea {
   
 }
 
-/* overlay */
 .time-overlay{
   position: absolute;
   font-size: 12px;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: 0.6s;
   pointer-events: none;
   display: inline-block;
   white-space: nowrap;
+}
+/* overlay */
+
+.time-label{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .timedate{
+    cursor: pointer;
+  }
+  .time-label{ 
+    display:block; 
+  }
+
+  .time-overlay{
+    opacity:0;
+    transform:scale(0.8);
+    transition: 0.6s;
+  }
+  .timedate:hover .time-overlay{
+    opacity: 1;
+    transition: 0.6s;
+    transform: scale(1);
+  }
 }
 
 /* SAAT DITEKAN / HOVER */
@@ -636,10 +661,6 @@ button, input, optgroup, select, textarea {
   opacity: 0;
 }
 
-.timedate:hover .time-overlay{
-  opacity: 1;
-  transform: scale(1);
-}
 
 /* HERO */
 /* DEFAULT → LAPTOP */
@@ -764,18 +785,19 @@ footer{
 
   background: rgba(219, 211, 211, 0.5);
     backdrop-filter: blur(25px);
-    box-shadow: 0 8px 32px 10px rgba(155, 148, 148, 0.25);
+    box-shadow: 0 8px 32px 10px rgba(155, 148, 148, 0.295);
     border: 1px solid rgba(240, 236, 236, 0.5);
     margin-top: 200px;
 }
 
+
 footer{
   border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: justify;
 }
-
 footer .spasi{
   max-width: 1200px;
-  padding-top: 1.5rem;
+  padding-top: 40px;
   padding-bottom: 50px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -817,22 +839,26 @@ footer .medsos{
 }
 
 footer .medsos .icon{
-  display: flex;
+  display: inline-block;
   flex-direction: column;
 }
+footer .medsos .icon i{
+  margin-right: 5px;
+}
 
-footer h1,
 footer h2{
   font-family: 'Cinzel', serif;
   margin-bottom: 5px;
+  line-height: 1.6;
+  font-size: 28px;
 }
 
 footer p,
 footer a,
 footer li{
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.6;
-  color: rgba(51, 49, 49, 0.8);
+  color: rgb(43, 43, 43);
 }
 
 footer a{
@@ -840,7 +866,8 @@ footer a{
 }
 
 footer a:hover{
-  color: white;
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 900px) {
@@ -852,5 +879,15 @@ footer a:hover{
   }
   footer .spasi{
     padding-bottom: 20px;
+  }
+
+  footer p,
+  footer a,
+  footer li{
+
+  font-size: 16px;
+  }
+  footer h2{
+    font-size: 28px;
   }
 }
