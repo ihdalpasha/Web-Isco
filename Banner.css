@@ -4,7 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html, body {
+  overflow-x: hidden;
+}
 html{
 scroll-behavior: smooth;
 }
@@ -186,7 +188,7 @@ div {
   justify-content: space-between;
   align-items: center;  
   gap: 20px;
-
+  position: relative;
 }
 .flexh1logo{
   display: flex;
@@ -451,8 +453,10 @@ button, input, optgroup, select, textarea {
     position: fixed;
     top: 0;
     right: 0;
+    left: auto;
     bottom: 0;
-    width: 50%;
+    width: min(320px, 80vw);
+    max-width: 100%;
     height: 100%;
     min-height: 100vh;
     max-height: 100vh;
@@ -561,6 +565,29 @@ button, input, optgroup, select, textarea {
   }
 }
 
+@media (max-width: 580px) {
+
+  .flexcontainer{
+    justify-content: center;
+    gap: 0;
+  }
+  
+
+  .flexh1logo{
+    display:flex;
+    align-items:center;
+    width:100%;
+    gap: 0;
+  }
+
+  .h1flex{
+    margin:0 auto;
+  }
+
+
+}
+
+
 .timedate{
   position: fixed;
   bottom: 0;
@@ -629,9 +656,8 @@ button, input, optgroup, select, textarea {
 /* DEFAULT → LAPTOP */
 
 :root {
-  --nav-h: 72px;
+  --nav-h: 78px;
 }
-
 .hero {
   min-height: clamp(
     420px,
@@ -644,7 +670,7 @@ button, input, optgroup, select, textarea {
   background-size: cover;
 
   /* fokus default desktop */
-  background-position: center 35%;
+  background-position: center 42%;
 
   display: flex;
   align-items: center;
@@ -668,22 +694,7 @@ button, input, optgroup, select, textarea {
   background: rgba(0, 0, 0, 0.35);
 }
 
-.hero-content {
-  position: relative;
-  color: white;
-  text-align: center;
-}
 
-.hero-content h1 {
-  font-size: 64px;
-  letter-spacing: 2px;
-}
-
-.hero-content p {
-  margin-top: 10px;
-  font-size: 20px;
-  opacity: 0.9;
-}
 
 /* CONTENT */
 .content {

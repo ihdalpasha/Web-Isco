@@ -247,3 +247,37 @@
     padding: 60px 10px 60px 10px;
   }
 }
+
+.prize-section{
+
+}
+
+.prize-grid{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 600px));
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 3em;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.prize-isi{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.prize-card{
+ background: white;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.11);
+  transition: 0.3s;
+}
